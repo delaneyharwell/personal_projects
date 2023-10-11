@@ -51,6 +51,15 @@ void selectionSort(int arr[], int n){
         swap(&arr[min_idx], &arr[i]);
     }
 }
+void intro(){
+    printf("Hello! Welcome to you calorie intake tracker.\n");
+    printf("You may enter any of the following commands: \n");
+    printf("    add <calorie_value> <time>\n");
+    printf("    replace <calorie_value> <time>\n");
+    printf("    printplan\n");
+    printf("    quit\n");
+    printf("Total calories must not exceed 2500 and times must be in [0, 23] range.\n");
+}
 
 int main(){
     char str[100];
@@ -59,7 +68,7 @@ int main(){
     int times[128];
     int cals[128];
     int time_count = 0;
-    printf("Hello! Welcome to you calorie intake tracker.\n");
+    intro();
     printf("$ ");
     fgets(str, sizeof(str), stdin);
     char * tok  = strtok(str, " ");
